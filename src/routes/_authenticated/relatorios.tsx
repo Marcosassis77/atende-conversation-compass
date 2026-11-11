@@ -2,14 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ModulePage } from "@/components/common/ModulePage";
 import { getModule } from "@/config/navigation";
 
-const m = getModule("conversas");
+const m = getModule("relatorios");
 
-export const Route = createFileRoute("/conversas")({
+export const Route = createFileRoute("/_authenticated/relatorios")({
   head: () => ({
     meta: [
-      { title: "Conversas — AtendeAI" },
+      { title: "Relatórios — AtendeAI" },
       { name: "description", content: m.description },
-      { property: "og:title", content: "Conversas — AtendeAI" },
+      { property: "og:title", content: "Relatórios — AtendeAI" },
       { property: "og:description", content: m.description },
     ],
   }),
@@ -17,5 +17,5 @@ export const Route = createFileRoute("/conversas")({
 });
 
 function Page() {
-  return <ModulePage moduleKey="conversas" />;
+  return <ModulePage moduleKey="relatorios" />;
 }

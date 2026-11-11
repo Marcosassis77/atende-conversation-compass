@@ -2,14 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ModulePage } from "@/components/common/ModulePage";
 import { getModule } from "@/config/navigation";
 
-const m = getModule("clientes");
+const m = getModule("assinatura");
 
-export const Route = createFileRoute("/clientes")({
+export const Route = createFileRoute("/_authenticated/assinatura")({
   head: () => ({
     meta: [
-      { title: "Clientes — AtendeAI" },
+      { title: "Assinatura e plano — AtendeAI" },
       { name: "description", content: m.description },
-      { property: "og:title", content: "Clientes — AtendeAI" },
+      { property: "og:title", content: "Assinatura e plano — AtendeAI" },
       { property: "og:description", content: m.description },
     ],
   }),
@@ -17,5 +17,5 @@ export const Route = createFileRoute("/clientes")({
 });
 
 function Page() {
-  return <ModulePage moduleKey="clientes" />;
+  return <ModulePage moduleKey="assinatura" />;
 }

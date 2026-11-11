@@ -19,7 +19,7 @@ export interface AppModule {
 }
 
 export const modules: AppModule[] = [
-  { key: "dashboard", title: "Dashboard", url: "/", icon: LayoutDashboard, group: "operacao",
+  { key: "dashboard", title: "Dashboard", url: "/dashboard", icon: LayoutDashboard, group: "operacao",
     description: "Visão geral do desempenho do atendimento.", planned: [] },
   { key: "atendimento", title: "Atendimento", url: "/atendimento", icon: Headset, group: "operacao",
     description: "Fila de atendimentos em tempo real, distribuição entre agentes e transferência entre IA e humanos.",

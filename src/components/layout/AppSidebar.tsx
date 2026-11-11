@@ -8,7 +8,7 @@ import { modules, navGroups } from "@/config/navigation";
 
 export function AppSidebar() {
   const pathname = useRouterState({ select: (r) => r.location.pathname });
-  const isActive = (url: string) => (url === "/" ? pathname === "/" : pathname.startsWith(url));
+  const isActive = (url: string) => (pathname.startsWith(url));
 
   return (
     <Sidebar collapsible="icon">
@@ -46,7 +46,7 @@ export function AppSidebar() {
       </SidebarContent>
       <SidebarFooter className="p-3 group-data-[collapsible=icon]:hidden">
         <p className="rounded-lg border border-sidebar-border px-3 py-2 text-xs text-sidebar-foreground/60">
-          Versão de fundação · integrações ainda não conectadas
+          WhatsApp ainda não conectado
         </p>
       </SidebarFooter>
     </Sidebar>
