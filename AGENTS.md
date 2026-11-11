@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Sidebar modules are defined once in `src/config/navigation.ts`; routes and the sidebar read from it so adding a module is one config entry plus one route file.
+- Never render fictitious numbers: metrics use `null` for "no data" and pages show empty states until a real data source exists.
+- Shared UI lives in `src/components/common`; feature-specific types/logic in `src/features/<feature>`.

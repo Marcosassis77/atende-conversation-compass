@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AssinaturaRouteImport } from './routes/assinatura'
+import { Route as AssistenteIaRouteImport } from './routes/assistente-ia'
+import { Route as AtendimentoRouteImport } from './routes/atendimento'
+import { Route as BaseDeConhecimentoRouteImport } from './routes/base-de-conhecimento'
+import { Route as ClientesRouteImport } from './routes/clientes'
+import { Route as ConfiguracoesRouteImport } from './routes/configuracoes'
+import { Route as ConversasRouteImport } from './routes/conversas'
+import { Route as IntegracoesRouteImport } from './routes/integracoes'
+import { Route as RelatoriosRouteImport } from './routes/relatorios'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AssinaturaRoute = AssinaturaRouteImport.update({
+  id: '/assinatura',
+  path: '/assinatura',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AssistenteIaRoute = AssistenteIaRouteImport.update({
+  id: '/assistente-ia',
+  path: '/assistente-ia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AtendimentoRoute = AtendimentoRouteImport.update({
+  id: '/atendimento',
+  path: '/atendimento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BaseDeConhecimentoRoute = BaseDeConhecimentoRouteImport.update({
+  id: '/base-de-conhecimento',
+  path: '/base-de-conhecimento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClientesRoute = ClientesRouteImport.update({
+  id: '/clientes',
+  path: '/clientes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfiguracoesRoute = ConfiguracoesRouteImport.update({
+  id: '/configuracoes',
+  path: '/configuracoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConversasRoute = ConversasRouteImport.update({
+  id: '/conversas',
+  path: '/conversas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IntegracoesRoute = IntegracoesRouteImport.update({
+  id: '/integracoes',
+  path: '/integracoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RelatoriosRoute = RelatoriosRouteImport.update({
+  id: '/relatorios',
+  path: '/relatorios',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/assinatura': typeof AssinaturaRoute
+  '/assistente-ia': typeof AssistenteIaRoute
+  '/atendimento': typeof AtendimentoRoute
+  '/base-de-conhecimento': typeof BaseDeConhecimentoRoute
+  '/clientes': typeof ClientesRoute
+  '/configuracoes': typeof ConfiguracoesRoute
+  '/conversas': typeof ConversasRoute
+  '/integracoes': typeof IntegracoesRoute
+  '/relatorios': typeof RelatoriosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/assinatura': typeof AssinaturaRoute
+  '/assistente-ia': typeof AssistenteIaRoute
+  '/atendimento': typeof AtendimentoRoute
+  '/base-de-conhecimento': typeof BaseDeConhecimentoRoute
+  '/clientes': typeof ClientesRoute
+  '/configuracoes': typeof ConfiguracoesRoute
+  '/conversas': typeof ConversasRoute
+  '/integracoes': typeof IntegracoesRoute
+  '/relatorios': typeof RelatoriosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/assinatura': typeof AssinaturaRoute
+  '/assistente-ia': typeof AssistenteIaRoute
+  '/atendimento': typeof AtendimentoRoute
+  '/base-de-conhecimento': typeof BaseDeConhecimentoRoute
+  '/clientes': typeof ClientesRoute
+  '/configuracoes': typeof ConfiguracoesRoute
+  '/conversas': typeof ConversasRoute
+  '/integracoes': typeof IntegracoesRoute
+  '/relatorios': typeof RelatoriosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/assinatura'
+    | '/assistente-ia'
+    | '/atendimento'
+    | '/base-de-conhecimento'
+    | '/clientes'
+    | '/configuracoes'
+    | '/conversas'
+    | '/integracoes'
+    | '/relatorios'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/assinatura'
+    | '/assistente-ia'
+    | '/atendimento'
+    | '/base-de-conhecimento'
+    | '/clientes'
+    | '/configuracoes'
+    | '/conversas'
+    | '/integracoes'
+    | '/relatorios'
+  id:
+    | '__root__'
+    | '/'
+    | '/assinatura'
+    | '/assistente-ia'
+    | '/atendimento'
+    | '/base-de-conhecimento'
+    | '/clientes'
+    | '/configuracoes'
+    | '/conversas'
+    | '/integracoes'
+    | '/relatorios'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AssinaturaRoute: typeof AssinaturaRoute
+  AssistenteIaRoute: typeof AssistenteIaRoute
+  AtendimentoRoute: typeof AtendimentoRoute
+  BaseDeConhecimentoRoute: typeof BaseDeConhecimentoRoute
+  ClientesRoute: typeof ClientesRoute
+  ConfiguracoesRoute: typeof ConfiguracoesRoute
+  ConversasRoute: typeof ConversasRoute
+  IntegracoesRoute: typeof IntegracoesRoute
+  RelatoriosRoute: typeof RelatoriosRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/assinatura': {
+      id: '/assinatura'
+      path: '/assinatura'
+      fullPath: '/assinatura'
+      preLoaderRoute: typeof AssinaturaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/assistente-ia': {
+      id: '/assistente-ia'
+      path: '/assistente-ia'
+      fullPath: '/assistente-ia'
+      preLoaderRoute: typeof AssistenteIaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/atendimento': {
+      id: '/atendimento'
+      path: '/atendimento'
+      fullPath: '/atendimento'
+      preLoaderRoute: typeof AtendimentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/base-de-conhecimento': {
+      id: '/base-de-conhecimento'
+      path: '/base-de-conhecimento'
+      fullPath: '/base-de-conhecimento'
+      preLoaderRoute: typeof BaseDeConhecimentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/clientes': {
+      id: '/clientes'
+      path: '/clientes'
+      fullPath: '/clientes'
+      preLoaderRoute: typeof ClientesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/configuracoes': {
+      id: '/configuracoes'
+      path: '/configuracoes'
+      fullPath: '/configuracoes'
+      preLoaderRoute: typeof ConfiguracoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conversas': {
+      id: '/conversas'
+      path: '/conversas'
+      fullPath: '/conversas'
+      preLoaderRoute: typeof ConversasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/integracoes': {
+      id: '/integracoes'
+      path: '/integracoes'
+      fullPath: '/integracoes'
+      preLoaderRoute: typeof IntegracoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/relatorios': {
+      id: '/relatorios'
+      path: '/relatorios'
+      fullPath: '/relatorios'
+      preLoaderRoute: typeof RelatoriosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AssinaturaRoute: AssinaturaRoute,
+  AssistenteIaRoute: AssistenteIaRoute,
+  AtendimentoRoute: AtendimentoRoute,
+  BaseDeConhecimentoRoute: BaseDeConhecimentoRoute,
+  ClientesRoute: ClientesRoute,
+  ConfiguracoesRoute: ConfiguracoesRoute,
+  ConversasRoute: ConversasRoute,
+  IntegracoesRoute: IntegracoesRoute,
+  RelatoriosRoute: RelatoriosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
