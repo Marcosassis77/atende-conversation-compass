@@ -73,6 +73,7 @@ export type Database = {
           created_at: string
           created_by: string
           customer_contact: string | null
+          customer_id: string | null
           customer_name: string
           id: string
           status: string
@@ -83,6 +84,7 @@ export type Database = {
           created_at?: string
           created_by?: string
           customer_contact?: string | null
+          customer_id?: string | null
           customer_name: string
           id?: string
           status?: string
@@ -93,6 +95,7 @@ export type Database = {
           created_at?: string
           created_by?: string
           customer_contact?: string | null
+          customer_id?: string | null
           customer_name?: string
           id?: string
           status?: string
@@ -101,6 +104,69 @@ export type Database = {
         Relationships: [
           {
             foreignKeyName: "conversations_company_id_fkey"
+            columns: ["company_id"]
+            isOneToOne: false
+            referencedRelation: "companies"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "conversations_customer_id_fkey"
+            columns: ["customer_id"]
+            isOneToOne: false
+            referencedRelation: "customers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      customers: {
+        Row: {
+          company_id: string
+          created_at: string
+          created_by: string | null
+          document: string | null
+          email: string | null
+          full_name: string
+          id: string
+          notes: string | null
+          organization: string | null
+          phone: string | null
+          status: string
+          updated_at: string
+          whatsapp: string | null
+        }
+        Insert: {
+          company_id: string
+          created_at?: string
+          created_by?: string | null
+          document?: string | null
+          email?: string | null
+          full_name: string
+          id?: string
+          notes?: string | null
+          organization?: string | null
+          phone?: string | null
+          status?: string
+          updated_at?: string
+          whatsapp?: string | null
+        }
+        Update: {
+          company_id?: string
+          created_at?: string
+          created_by?: string | null
+          document?: string | null
+          email?: string | null
+          full_name?: string
+          id?: string
+          notes?: string | null
+          organization?: string | null
+          phone?: string | null
+          status?: string
+          updated_at?: string
+          whatsapp?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "customers_company_id_fkey"
             columns: ["company_id"]
             isOneToOne: false
             referencedRelation: "companies"
