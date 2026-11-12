@@ -1,0 +1,3 @@
+REVOKE EXECUTE ON FUNCTION public.create_company(text), public.handle_new_user(), public.has_company_role(uuid, public.company_role[]), public.is_company_member(uuid), public.messages_sync_company(), public.messages_touch_conversation() FROM PUBLIC, anon;
+REVOKE EXECUTE ON FUNCTION public.handle_new_user(), public.messages_sync_company(), public.messages_touch_conversation() FROM authenticated;
+GRANT EXECUTE ON FUNCTION public.create_company(text), public.has_company_role(uuid, public.company_role[]), public.is_company_member(uuid) TO authenticated;
